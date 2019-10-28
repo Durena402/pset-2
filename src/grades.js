@@ -1,17 +1,20 @@
 const readlineSync = require("readline-sync");
 
-const homework = readlineSync.question("\nEnter three homework grades.");
-const hw1 = readlineSync.question("");
-const hw2 = readlineSync.question("");
-const hw3 = readlineSync.question("");
-const quiz = readlineSync.question("\nEnter three quiz grades.");
-const quiz1 = readlineSync.question("");
-const quiz2 = readlineSync.question("");
-const quiz3 = readlineSync.question("");
-const test = readlineSync.question("\nEnter three test grades.");
-const test1 = readlineSync.question("");
-const test2 = readlineSync.question("");
-const test3 = readlineSync.question("");
-let a = hw1+hw2+hw3
-let b = quiz1+quiz2+quiz3
-let c= test1+test2+test3
+const hw1 = Number (readlineSync.question("\nEnter three homework grades.\n"));
+const hw2 = Number (readlineSync.question());
+const hw3 = Number (readlineSync.question());
+const quiz1 = Number (readlineSync.question("\nEnter three quiz grades.\n"));
+const quiz2 = Number (readlineSync.question());
+const quiz3 = Number (readlineSync.question());
+const test1 = Number (readlineSync.question("\nEnter three test grades.\n"));
+const test2 = Number (readlineSync.question());
+const test3 = Number (readlineSync.question());
+let a = ( hw1 + hw2 + hw3 ) / 3;
+let b = ( quiz1 + quiz2 + quiz3 ) / 3;
+let c = ( test1 + test2 + test3 ) / 3;
+const hwweight = a * .15;
+const quizweight = b * .35;
+const testweight = c * .50;
+const grade = hwweight + quizweight + testweight;
+const total = grade.toLocaleString('en', { minimumFractionDigits: 2, maximumFractionDigits: 2});
+console.log ("\nYour marking period grade is " + total + "%\n");

@@ -1,0 +1,20 @@
+const readlineSync = require("readline-sync");
+
+const wage = Number (readlineSync.question("\nHourly wage: "));
+const monday = Number (readlineSync.question("\nMonday: "));
+const tuesday = Number (readlineSync.question("Tuesday: "));
+const wednesday = Number (readlineSync.question("Wednesday: "));
+const thursday = Number (readlineSync.question("Thursday: "));
+const friday = Number (readlineSync.question("Friday: "));
+const saturday = Number (readlineSync.question("Saturday: "));
+const sunday = Number (readlineSync.question("Sunday: "));
+let a = monday * wage;
+let b = tuesday * wage;
+let c = wednesday * wage;
+let d = thursday * wage;
+let e = friday * wage;
+let f = saturday * wage;
+let g = sunday * wage;
+const total = a + b + c + d + e + f + g;
+const earnings = total.toLocaleString('en', { minimumFractionDigits: 2, maximumFractionDigits: 2});
+console.log ("\nYou'll make $" + earnings + " this week.\n");
